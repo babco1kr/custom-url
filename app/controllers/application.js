@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from "@ember/object";
-
+// import fetch from 'ember-fetch';
 export default class ApplicationController extends Controller {
 
     @action
@@ -14,16 +14,17 @@ export default class ApplicationController extends Controller {
 
     @action
     async getTinyUrl() {
-            // alert(`SUBMITTED ${this.get('findUrl')}`);
-            // fetch(`http://localhost:3000/find/${this.get('findUrl')}`)
-            // .then(function(data) {
-            //     console.log(data.json());
-            // })
+            alert(`SUBMITTED ${this.get('findUrl')}`);
+            fetch(`http://localhost:3000/find/${this.get('findUrl')}`)
+            .then((response) => {
+                return response.json();
+            }).then((data) => {
+                console.log(data);
+            })
 
-            const url = await fetch(`http://localhost:3000/find/${this.get('findUrl')}`)
-            await console.log(url);
+            // const url = await fetch(`http://localhost:3000/find/${this.get('findUrl')}`)
+            // await console.log(url);
 
     }
         
 }
-
