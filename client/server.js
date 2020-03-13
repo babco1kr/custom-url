@@ -1,12 +1,13 @@
 const express = require('express');
 const PORT = process.env.PORT || 3000;
+const cors = require('cors');
 
 const app = express();
 
 // Parse Request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(cors());
 // import DB shema
 const db = require("./models");
 
