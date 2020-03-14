@@ -2,26 +2,41 @@
     <h1>Custom URL</h1>
 </header>
 <div class = "page">
+<div class = "container">
     <div class = "card">
         <h3>Create Tiny URL</h3>
-        {{input type="text" value=this.urlGiven class="" placeholder="Please enter URL." autofocus="auto"}}
+            <div class = "inputContainer">
+                {{input type="text" value=this.urlGiven class="" placeholder="Please enter URL" autofocus="auto"}}
+            </div>
 {{!-- <input type="text" value = {{this.urlGiven}} placeholder = "Please enter Url"> --}}
         <button type="submit" {{on "click" (fn this.makeTinyUrl)}}>Submit</button>
     </div>
 
     <div class = "card">   
         <h3>Get URL</h3>
-        {{input type="text" value=this.findUrl class="" placeholder="Please enter URL." autofocus="auto"}}
+            <div class = "inputContainer">
+                {{input type="text" value=this.findUrl class="" placeholder="Please enter Tiny URL" autofocus="auto"}}
+            </div>
+        
         <button type="submit" {{on "click" (fn this.getTinyUrl)}}>Submit</button>
     </div>
+</div>
+
 {{#if this.latestUrlId}}
-<div class="">
-    <h5>Latest Link created</h5>
-    {{this.latestUrlId}}
-    <a href = {{this.latestTargetUrl}}>{{this.latestTargetUrl}}</a>
-    {{!-- {{this.latestTargetUrl}} --}}
-    <a href = {{this.latestTinyUrl}}>{{this.latestTinyUrl}}</a>
-    {{!-- {{this.latestTinyUrl}} --}}
+<h4>Latest Link created</h4>
+<div class="container">
+    <div class = "urlData">
+        <h5>ID</h5>
+        {{this.latestUrlId}}
+    </div>
+    <div class = "urlData">
+        <h5>Target URL</h5>
+        <a href = {{this.latestTargetUrl}}>{{this.latestTargetUrl}}</a>
+    </div>
+    <div class = "urlData">
+        <h5>Tiny URL</h5>
+        <a href = {{this.latestTinyUrl}}>{{this.latestTinyUrl}}</a>
+    </div>
 </div>
 {{/if}}
 {{outlet}}

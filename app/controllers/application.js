@@ -11,10 +11,10 @@ export default class ApplicationController extends Controller {
     makeTinyUrl() {
             this.store.findRecord('create', this.get('urlGiven'))
             .then((url) => {
-                console.log(url.get('tiny') + ' ' + url.get('url') + ' ' + url.get('urlid'));
                 this.set('latestUrlId', url.get('urlid'));
                 this.set('latestTargetUrl', url.get('url'));
                 this.set('latestTinyUrl', 'http://localhost:3000/' + url.get('tiny'));
+                this.set('urlGiven', '')
             });
             
             
@@ -24,7 +24,15 @@ export default class ApplicationController extends Controller {
     @action
     async getTinyUrl() {
 
-            this.store.findRecord('find', this.get('findUrl'))
+            let urlArray = this.get('findUrl').split('/');
+            let urlSearch;
+            if (urlArray.length > 1) {
+                urlSearch = urlArray[(urlArray.length - 1)]
+            } else {
+                urlSearch =urlArray[0]
+            }
+
+            this.store.findRecord('find', urlSearch)
             .then((url) => {
                 let newLocation = url.get('url');
                 window.location.href = newLocation;

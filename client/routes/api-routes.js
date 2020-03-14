@@ -30,6 +30,19 @@ app.get('/finds/:tiny_url', async (req, res) => {
   
   const url = await db.Url.findOne({ where: { tiny_url: req.params.tiny_url }});
   // response has to be structured this way for Ember to accept it and not throw and error
+
+  if (url === null) {
+    const object = {
+      errors: [
+        {
+          status: '404',
+          detail: 'URL does not exist'
+        }
+      ]
+    }
+    res.json(object);
+  }
+  
   const object = {
     data: {
       type: 'find',
@@ -46,6 +59,7 @@ app.get('/finds/:tiny_url', async (req, res) => {
 // Simple get to the service to redirect to the target_url without needing the front end
 app.get('/:tiny_url', async (req, res) => {
   const url = await db.Url.findOne({ where: {tiny_url: req.params.tiny_url}});
+  if (url === null) res.sendStatus(404);
 
   res.redirect(url.target_url);
 })
