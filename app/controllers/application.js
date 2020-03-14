@@ -14,8 +14,9 @@ export default class ApplicationController extends Controller {
                 console.log(url.get('tiny') + ' ' + url.get('url') + ' ' + url.get('urlid'));
                 this.set('latestUrlId', url.get('urlid'));
                 this.set('latestTargetUrl', url.get('url'));
-                this.set('latestTinyUrl', url.get('tiny'));
+                this.set('latestTinyUrl', 'http://localhost:3000/' + url.get('tiny'));
             });
+            
             
         }
 

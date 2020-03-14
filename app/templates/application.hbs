@@ -1,18 +1,25 @@
 <header>
     <h1>Custom URL</h1>
 </header>
-{{input type="text" value=urlGiven class="" placeholder="Please enter URL." autofocus="auto"}}
-<button type = "submit" {{on "click" (fn this.makeTinyUrl)}} >Submit</button>
-<h3>Get URL</h3>
-{{input type="text" value=findUrl class="" placeholder="Please enter URL." autofocus="auto"}}
-<button type = "submit" {{on "click" (fn this.getTinyUrl)}}>Submit</button>
+<div class = "page">
+    <div class = "gridItem">
+    <h3>Create Tiny URL</h3>
+{{input type="text" value=this.urlGiven class="" placeholder="Please enter URL." autofocus="auto"}}
+{{!-- <input type="text" value = {{this.urlGiven}} placeholder = "Please enter Url"> --}}
+<button type="submit" {{on "click" (fn this.makeTinyUrl)}}>Submit</button>
+</div>    <h3>Get URL</h3>
+{{input type="text" value=this.findUrl class="" placeholder="Please enter URL." autofocus="auto"}}
+<button type="submit" {{on "click" (fn this.getTinyUrl)}}>Submit</button>
 
-{{#if latestUrlId}}
-<div class = "">
-<h5>Latest Link created</h5>
-{{latestUrlId}}
-{{latestTargetUrl}}
-{{latestTinyUrl}}
+{{#if this.latestUrlId}}
+<div class="">
+    <h5>Latest Link created</h5>
+    {{this.latestUrlId}}
+    <a href = {{this.latestTargetUrl}}>{{this.latestTargetUrl}}</a>
+    {{!-- {{this.latestTargetUrl}} --}}
+    <a href = {{this.latestTinyUrl}}>{{this.latestTinyUrl}}</a>
+    {{!-- {{this.latestTinyUrl}} --}}
 </div>
 {{/if}}
 {{outlet}}
+</div>

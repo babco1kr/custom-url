@@ -45,7 +45,7 @@ app.get('/finds/:tiny_url', async (req, res) => {
 
 // Simple get to the service to redirect to the target_url without needing the front end
 app.get('/:tiny_url', async (req, res) => {
-  const url = await db.Url.findOne({ where: {tiny_url: req.params.id}});
+  const url = await db.Url.findOne({ where: {tiny_url: req.params.tiny_url}});
 
   res.redirect(url.target_url);
 })
