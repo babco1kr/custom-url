@@ -23,6 +23,16 @@ app.get('/finds/:tiny_url', async (req, res) => {
   // }
 
   // res.redirect(url.target_url, 302);
-  res.json(url);
+  const object = {
+    data: {
+      type: 'find',
+      id: url.tiny_url,
+      attributes: {
+        url: url.target_url,
+      }
+      // tiny_url: url.tiny_url
+    }
+  }
+  res.json(object);
 })
 }
