@@ -2,9 +2,9 @@
     <h1>Custom URL</h1>
 </header>
 {{input type="text" value=urlGiven class="" placeholder="Please enter URL." autofocus="auto"}}
-<button onclick = {{action 'makeTinyUrl'}}>Submit</button>
+<button type = "submit" {{on "click" (fn this.makeTinyUrl)}} >Submit</button>
 <h3>Get URL</h3>
 {{input type="text" value=findUrl class="" placeholder="Please enter URL." autofocus="auto"}}
-<button onclick = {{action 'getTinyUrl'}}>Submit</button>
+<button type = "submit" {{on "click" (fn this.getTinyUrl)}}>Submit</button>
 
 {{outlet}}
