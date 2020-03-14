@@ -7,4 +7,12 @@
 {{input type="text" value=findUrl class="" placeholder="Please enter URL." autofocus="auto"}}
 <button type = "submit" {{on "click" (fn this.getTinyUrl)}}>Submit</button>
 
+{{#if latestUrlId}}
+<div class = "">
+<h5>Latest Link created</h5>
+{{latestUrlId}}
+{{latestTargetUrl}}
+{{latestTinyUrl}}
+</div>
+{{/if}}
 {{outlet}}
