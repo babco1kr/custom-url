@@ -13,9 +13,16 @@ module.exports = function(app) {
   })
 
 
-app.get('/find/:tiny_url', async (req, res) => {
+app.get('/finds/:tiny_url', async (req, res) => {
   
   const url = await db.Url.findOne({ where: { tiny_url: req.params.tiny_url }});
+  // if (url.data.target_url === null) {
+  //   res.json(url)
+  // } else {
+  //   res.redirect(url.data.target_url);
+  // }
+
+  // res.redirect(url.target_url, 302);
   res.json(url);
 })
 }
