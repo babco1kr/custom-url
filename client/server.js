@@ -1,5 +1,5 @@
 const express = require('express');
-const PORT = 3306;
+const PORT = 3000;
 const cors = require('cors');
 
 const app = express();

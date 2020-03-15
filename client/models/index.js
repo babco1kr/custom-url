@@ -16,11 +16,12 @@ let sequelize;
 // }
 
 sequelize = new Sequelize('url-shortner', 'root', 'root', {
-  host: "127.0.0.1",
+  host: "mysql-db",
   port: 3306,
   dialect: 'mysql',
-  socketPath: '/var/run/mysqld/mysqld.sock' 
 });
+
+// sequelize = new Sequelize('mysql://root:root@db:6603/url-shortner');
 
 fs
   .readdirSync(__dirname)
