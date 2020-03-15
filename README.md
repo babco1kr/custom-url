@@ -8,9 +8,11 @@ This applitcation only runs inside a docker container so you must have Docker in
 * Once up and running go to [http://localhost:4200/](http://localhost:4200/)
   * it should look like this:
 
-    ![Start](images/4200F.png)
+    ![Application](https://github.com/babco1kr/custom-url/blob/master/images/4200F.PNG?raw=true)
 
-The server is running on `http://localhost:3000/` 
+The server is running on `http://localhost:3000/`
+
+Get URL accepts both a full Tiny URL, `http://localhost:3000/gRcg6_Z0`, and just the string identifier, `gRcg6_Z0`
 
 ### Technology Used
 * Docker
@@ -19,3 +21,5 @@ The server is running on `http://localhost:3000/`
 * Mysql
 * Sequelize
 * Express
+
+The original file for the server repo while being developed before merged into this application to be all inclusive can be found [here](https://github.com/babco1kr/url-server)
