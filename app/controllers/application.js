@@ -7,6 +7,7 @@ export default class ApplicationController extends Controller {
     latestTargetUrl = '';
     latestTinyUrl = '';
 
+    // This action creates the tiny url for the Url the user submits
     @action
     makeTinyUrl() {
             this.store.findRecord('create', this.get('urlGiven'))
