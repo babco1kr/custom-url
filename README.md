@@ -1,57 +1,21 @@
-# custom-url
+# URL Shortner
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+## Running the application
 
-## Prerequisites
+This applitcation only runs inside a docker container so you must have Docker installed on your machine, can be found [here](https://www.docker.com/products/docker-desktop)
 
-You will need the following things properly installed on your computer.
+* Running this project is as simple as opening it up and in your terminal enter `docker-compose up`
+* Once up and running go to [http://localhost:4200/](http://localhost:4200/)
+  * it should look like this:
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+    ![Start](images/4200F.png)
 
-## Installation
+The server is running on `http://localhost:3000/` 
 
-* `git clone <repository-url>` this repository
-* `cd custom-url`
-* `npm install`
-
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+### Technology Used
+* Docker
+* Ember Js
+* Node Js
+* Mysql
+* Sequelize
+* Express

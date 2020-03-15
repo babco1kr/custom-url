@@ -16,7 +16,6 @@ services:
   server:
       build: ./client
       depends_on:
-      #   # - sequelize
         - db
       ports:
         - "3000:3000"
