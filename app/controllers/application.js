@@ -23,7 +23,7 @@ export default class ApplicationController extends Controller {
 
     // This action is for the user to redirect to the tiny url from the front end. 
     @action
-    async getTinyUrl() {
+    getTinyUrl() {
 
             let urlArray = this.get('findUrl').split('/');
             let urlSearch;
