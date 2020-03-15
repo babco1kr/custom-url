@@ -9,11 +9,18 @@ const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
 let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+// if (config.use_env_variable) {
+//   sequelize = new Sequelize(process.env[config.use_env_variable], config);
+// } else {
+//   sequelize = new Sequelize(config.database, config.username, config.password, config);
+// }
+
+sequelize = new Sequelize('url-shortner', 'root', 'root', {
+  host: "127.0.0.1",
+  port: 3306,
+  dialect: 'mysql',
+  socketPath: '/var/run/mysqld/mysqld.sock' 
+});
 
 fs
   .readdirSync(__dirname)
