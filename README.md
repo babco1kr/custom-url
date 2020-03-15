@@ -8,7 +8,7 @@ This applitcation only runs inside a docker container so you must have Docker in
 * Once up and running go to [http://localhost:4200/](http://localhost:4200/)
   * it should look like this:
 
-    ![Start](images/4200F.png)
+    ![Application](https://github.com/babco1kr/custom-url/blob/master/images/4200F.PNG?raw=true)
 
 The server is running on `http://localhost:3000/` 
 
